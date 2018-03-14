@@ -4,7 +4,7 @@ import './index.css';
 import Titulo from '../Titulo';
 
 const TriviaContainer = (  ) => (
-  <div class="Contenedor">
+  <div className="Contenedor">
 <Titulo></Titulo>
   </div>
 )
