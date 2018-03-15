@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
 
 const Botones = () => (
-  <div class="botones">
+  <div className="botones">
     <Grid>
       <Row>
         <Col xs={6}>

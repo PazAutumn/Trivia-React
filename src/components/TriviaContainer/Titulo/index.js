@@ -3,18 +3,17 @@ import PropTypes from "prop-types";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
 
-const Score = () => (
-  <div className="score">
-    <Grid>
+const Titulo = Titulo => (
+  <div className="App-title">
+  <Grid>
       <Row>
         <Col xs={12}>
-          <p>Score Aqui</p>
+        <p>Let's Start the Game</p>
         </Col>
       </Row>
     </Grid>
+    
   </div>
 );
 
-Score.propTypes = {};
-
-export default Score;
+export default Titulo;

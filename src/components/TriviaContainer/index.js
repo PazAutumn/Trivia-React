@@ -8,7 +8,7 @@ import Botones from "./Botones";
 import Score from "./Score";
 
 const TriviaContainer = () => (
-  <div class="Contenedor">
+  <div className="Contenedor">
     <Grid>
       <Row>
         <Col xs={12}>

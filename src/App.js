@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logo from "./components/Logo";
+import Logo from './components/TriviaContainer/Logo/Logo'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
