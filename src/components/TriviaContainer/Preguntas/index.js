@@ -24,7 +24,7 @@ class Preguntas extends Component {
       })
     }
 
-  render(){
+  render() {
     console.log('Render');
     const { questions } = this.state;
     return(
