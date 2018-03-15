@@ -7,6 +7,7 @@ import firebase, { auth, provider } from "./firebase.js";
 import "./App.css";
 import TriviaContainer from "./components/TriviaContainer";
 
+
 class App extends Component {
   constructor() {
     super();
