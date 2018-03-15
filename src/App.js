@@ -6,6 +6,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import "./App.css";
 import TriviaContainer from "./components/TriviaContainer";
 
+
 class App extends Component {
   render() {
     return (
