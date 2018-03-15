@@ -5,6 +5,7 @@ body{
 .logo img{
   width: 40vh;
   height: 15vh;
+  padding-top: 1em;
 }
 /*Estilos no aplicados*/
 .App {
