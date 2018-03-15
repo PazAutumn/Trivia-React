@@ -12,7 +12,7 @@ const TriviaContainer = () => (
     <Grid>
       <Row>
         <Col xs={12}>
-          <Titulo />
+
         </Col>
       </Row>
       <Row>

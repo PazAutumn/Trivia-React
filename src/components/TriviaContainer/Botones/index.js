@@ -24,6 +24,11 @@ class Botones extends Component {
       })
     }
 
+  answerTrue() {
+    const { respuesta } = this.state;
+    const {  }
+  }
+
 
   render() {
     return(
