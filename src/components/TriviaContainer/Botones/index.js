@@ -5,10 +5,13 @@ import "./style.css";
 
 class Botones extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.answerTrue = this.answerTrue.bind(this);
+    this.answerFalse = this.answerFalse.bind(this);
     this.state = {
       respuesta: null,
+      isTrue: false,
     }
   }
 
@@ -26,20 +29,32 @@ class Botones extends Component {
 
   answerTrue() {
     const { respuesta } = this.state;
-    const {  }
+    const { isTrue }= this.state;
+    this.setState({isTrue: true});
+    console.log('es true');
+    { isTrue === respuesta ? <p>True</p> : <p>False</p>}
   }
 
+  answerFalse() {
+    const { respuesta } = this.props;
+    this.setState({isTrue: false});
+    console.log('es false');
+  }
 
   render() {
+    const { respuesta } = this.state;
+    const { isTrue } = this.state;
+    const { answerTrue } =this.props;
+    const { answerFalse } =this.props;
     return(
       <div class="botones">
         <Grid>
           <Row>
             <Col xs={6}>
-              <input type="button" value="True"/>
+              <input type="button" value="True" onClick={this.answerTrue}/>
             </Col>
             <Col xs={6}>
-              <input type="button" value="False"/>
+              <input type="button" value="False" onClick={this.answerFalse}/>
             </Col>
           </Row>
         </Grid>
@@ -50,6 +65,10 @@ class Botones extends Component {
 
 
 
-Botones.propTypes = {};
+Botones.propTypes = {
+  answerTrue: PropTypes.func,
+  answerFalse: PropTypes.func,
+};
 
 export default Botones;
+
