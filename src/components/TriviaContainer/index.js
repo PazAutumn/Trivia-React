@@ -4,24 +4,13 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 import "./index.css";
 import Titulo from "./Titulo";
 import Preguntas from "./Preguntas";
-import Score from "./Score";
 
 const TriviaContainer = () => (
   <div className="Contenedor">
     <Grid>
       <Row>
         <Col xs={12}>
-
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
           <Preguntas />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <Score/>
         </Col>
       </Row>
     </Grid>
