@@ -20,11 +20,11 @@ class Preguntas extends Component {
         return response.json();
       }).then(data => {
         let questions = data.results[0].question;
-        console.log(questions);
+        console.log(questions, 'questions');
         this.setState({questions});
       })
     }
-
+    
   render() {
     console.log('Render');
     const { questions } = this.state;

@@ -69,16 +69,21 @@ class Botones extends Component {
   }
 
   render() {
-    const { respuesta } = this.state;
-    const { isTrue } = this.state;
-    const { answerTrue } =this.props;
-    const { answerFalse } =this.props;
+    const isTrue = this.state.isTrue;
+   // const { isTrue } = this.state;
+    //const { answerTrue } =this.props;
+    //const { answerFalse } =this.props;
+    if (isTrue) {
+      console.log(isTrue, 'is True');
+    } else {
+      console.log(isTrue, 'is False');
+    }
     return(
       <div class="botones">
         <Grid>
           <Row>
             <Col xs={6}>
-              <input type="button" value="True" onClick={this.answerTrue} answerTrue = {() => isTrue === respuesta ? this.props.alert.show('Correcto!') : this.props.alert.show('Incorrecto!')}/>
+              <input type="button" value="True" onClick={this.answerTrue}/>
             </Col>
             <Col xs={6}>
               <input type="button" value="False" onClick={this.answerFalse}/>
