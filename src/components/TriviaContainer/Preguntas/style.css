@@ -1,4 +1,11 @@
-.questions{
-    outline: 1px solid red;
-    height: 30vh;
+.questions-cont {
+  background-color: grey;
+  outline: 1px solid black;
+  height: 30vh;
+  width: 100%;
+  margin: 1em 0em;
+}
+
+.pregunta{
+    margin-top: 2em;
 }

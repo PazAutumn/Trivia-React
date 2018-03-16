@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
+import Botones from './../Botones';
 
 class Preguntas extends Component {
 
@@ -19,11 +20,11 @@ class Preguntas extends Component {
         return response.json();
       }).then(data => {
         let questions = data.results[0].question;
-        console.log(questions);
+        console.log(questions, 'questions');
         this.setState({questions});
       })
     }
-
+    
   render() {
     console.log('Render');
     const { questions } = this.state;
@@ -32,7 +33,7 @@ class Preguntas extends Component {
         <Grid>
           <Row>
             <Col xs={12}>
-              <p>{questions}</p>
+              <p className="pregunta">{questions}</p>
             </Col>
           </Row>
         </Grid>
@@ -40,7 +41,5 @@ class Preguntas extends Component {
     )
   }
 }
-
-Preguntas.propTypes = {};
 
 export default Preguntas;

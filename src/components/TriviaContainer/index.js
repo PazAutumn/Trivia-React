@@ -5,24 +5,16 @@ import "./index.css";
 import Titulo from "./Titulo";
 import Preguntas from "./Preguntas";
 import Botones from "./Botones";
-import Score from "./Score";
 
 const TriviaContainer = () => (
   <div className="Contenedor">
     <Grid>
       <Row>
-        <Col xs={12}>
-
-        </Col>
+        <Col xs={12} />
       </Row>
       <Row>
         <Col xs={12}>
           <Preguntas />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <Score />
         </Col>
       </Row>
       <Row>
