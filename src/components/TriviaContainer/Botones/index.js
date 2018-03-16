@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { withAlert } from 'react-alert';
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
 
@@ -32,7 +33,6 @@ class Botones extends Component {
     const { isTrue }= this.state;
     this.setState({isTrue: true});
     console.log('es true');
-    { isTrue === respuesta ? <p>True</p> : <p>False</p>}
   }
 
   answerFalse() {
@@ -51,7 +51,7 @@ class Botones extends Component {
         <Grid>
           <Row>
             <Col xs={6}>
-              <input type="button" value="True" onClick={this.answerTrue}/>
+              <input type="button" value="True" onClick={this.answerTrue} answerTrue = {() => isTrue === respuesta ? this.props.alert.show('Correcto!') : this.props.alert.show('Incorrecto!')}/>
             </Col>
             <Col xs={6}>
               <input type="button" value="False" onClick={this.answerFalse}/>

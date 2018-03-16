@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withAlert } from 'react-alert';
 import Logo from "./components/TriviaContainer/Logo/Logo";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { Grid, Row, Col } from "react-flexbox-grid";
