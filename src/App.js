@@ -7,6 +7,7 @@ import firebase, { auth, provider } from "./firebase.js";
 
 import "./App.css";
 import TriviaContainer from "./components/TriviaContainer";
+import Titulo from "./components/TriviaContainer/Titulo";
 
 class App extends Component {
   constructor() {
@@ -97,6 +98,9 @@ class App extends Component {
             <div className="wrapper">
               <div className="App-header">
                 <Logo />
+              </div>
+              <div className="App-header">
+                <Titulo />
               </div>
               <div className="Botones">
                 {this.state.user ? (
