@@ -1,4 +1,27 @@
-.questions{
-    outline: 1px solid red;
-    height: 30vh;
+.questions-cont {
+  background-color: grey;
+  outline: 1px solid black;
+  height: 30vh;
+  width: 100%;
+  margin: 1em 0em;
+}
+.pregunta{
+    margin-top: 2em;
+}
+.botones{
+  outline: 1px solid black;
+  padding: 1em;
+  background-color: grey; 
+}
+
+.score {
+  width: 80%;
+  margin: 0em 5em;
+}
+
+input{
+  height: 3em;
+  width: 5em;
+  border-radius: 3em;
+  background-color: white;
 }
