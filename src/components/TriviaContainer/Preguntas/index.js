@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
+import Botones from './../Botones';
 
 class Preguntas extends Component {
 
@@ -41,6 +42,8 @@ class Preguntas extends Component {
   }
 }
 
-Preguntas.propTypes = {};
+Preguntas.propTypes = {
+
+};
 
 export default Preguntas;

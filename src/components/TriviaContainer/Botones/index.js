@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withAlert } from 'react-alert';
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
+import Preguntas from './../Preguntas';
 
 class Botones extends Component {
 
@@ -10,9 +11,10 @@ class Botones extends Component {
     super(props);
     this.answerTrue = this.answerTrue.bind(this);
     this.answerFalse = this.answerFalse.bind(this);
+    this.anotherQuestion = this.anotherQuestion.bind(this);
     this.state = {
       respuesta: null,
-      isTrue: false,
+      isTrue: null,
     }
   }
 
@@ -28,17 +30,42 @@ class Botones extends Component {
       })
     }
 
+  anotherQuestion() {
+    fetch('https://opentdb.com/api.php?amount=10&category=11&type=boolean')
+    .then(response => {
+      console.log(response);
+      return response.json();
+    }).then(data => {
+      let questions = data.results[0].question;
+      console.log(questions);
+      this.setState({questions});
+    })
+  }
+
   answerTrue() {
     const { respuesta } = this.state;
-    const { isTrue }= this.state;
     this.setState({isTrue: true});
-    console.log('es true');
+    console.log('state', this.state.isTrue);
+    if(respuesta === 'True'){
+      console.log('es true');
+      alert('Respuesta Correcta')
+    }else{
+      console.log('es false');
+      alert('Respuesta Incorrecta');
+    }
+    
   }
 
   answerFalse() {
-    const { respuesta } = this.props;
+    const { respuesta } = this.state;
     this.setState({isTrue: false});
-    console.log('es false');
+    if(respuesta === 'False'){
+      console.log('es false');
+      alert('Respuesta Correcta')
+    }else{
+      console.log('es true');
+      alert('Respuesta Incorrecta');
+    }
   }
 
   render() {
