@@ -26,8 +26,11 @@ El proyecto fue realizado con las siguientes dependencias NPM:
   - css-loader ~v.0.28.10
   - gh-pages ~v.1.1.0
   - style-loader ~v.0.20.3
+  
++ A continuación se encuentra el wireframe con los componentes contenidos dentro del proyecto:
 
 ![alt text](./d6f43bad-ae47-4885-b009-0a0f96d2b34d.jpeg "Description goes here")
+
 ## Deploy en Heroku:
   - https://triviareact.herokuapp.com/ 
 
