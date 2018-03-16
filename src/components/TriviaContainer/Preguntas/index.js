@@ -18,7 +18,7 @@ class Preguntas extends Component {
     };
   }
 
-  componentWillMount() {
+  componentWillMount(anotherQuestion) {
     fetch("https://opentdb.com/api.php?amount=10&category=11&type=boolean")
       .then(response => {
         console.log(response);
@@ -35,11 +35,11 @@ class Preguntas extends Component {
         console.log("pregunta", questions, "respuesta correcta", respuesta);
         this.setState({ questions });
         this.setState({ respuesta });
-        this.setState({ random });
+        anotherQuestion();
       });
   }
 
-  anotherQuestion() {
+  anotherQuestion(questions) {
     fetch("https://opentdb.com/api.php?amount=10&category=11&type=boolean")
       .then(response => {
         console.log(response);
@@ -54,14 +54,16 @@ class Preguntas extends Component {
         /*console.log('pregunta de questions', questions);*/
         let respuesta = currentQuestion.correct_answer;
         console.log(
-          "pregunta",
+          "pregunta another",
           anotherQuestions,
           "respuesta correcta",
           respuesta
         );
         this.setState({ anotherQuestions });
         this.setState({ respuesta });
-        this.setState({ random });
+        return(
+        <p>{anotherQuestions}</p>
+        )
       });
   }
 
@@ -109,9 +111,8 @@ class Preguntas extends Component {
         <div className="questions-cont">
           <Row>
             <Col xs={12}>
-            { click === true ? <p className="pregunta">{questions}</p> :
-              <p className="pregunta">{questions}</p>
-            }
+            <p className="pregunta">{questions}</p>
+            <p className="pregunta">{anotherQuestions}</p>
             </Col>
           </Row>
         </div>
@@ -124,6 +125,11 @@ class Preguntas extends Component {
                 </Col>
               </Row>
             </div>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <input type="button" value="Next Question" onClick={this.anotherQuestion} />
+            </Col>
           </Row>
           <Row>
             <Col xs={6}>
@@ -143,7 +149,7 @@ Preguntas.propTypes = {
   respuesta: PropTypes.string,
   answerTrue: PropTypes.func,
   answerFalse: PropTypes.func,
-  anotherQuestion: PropTypes.func
+  anotherQuestion: PropTypes.func,
 };
 
 export default Preguntas;
