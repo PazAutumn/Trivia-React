@@ -1,4 +1,4 @@
-body{
+body {
   background-color: skyblue;
 }
 .App-header {
@@ -11,22 +11,35 @@ body{
 .App-title {
   font-size: 1.5em;
 }
-.logo img{
+.logo img {
   width: 40vh;
   height: 15vh;
   padding-top: 1em;
 }
-/*Estilos no aplicados*/
 
 .user-profile {
   position: fixed;
   top: 20px;
   right: 40px;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .user-profile img {
   border-radius: 50%;
   max-width: 100%;
+}
+
+button {
+  padding: 1em;
+  background-color: white;
+  border-radius: 2em;
+  width: 8em;
+}
+
+.Botones {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 2em;
 }

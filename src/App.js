@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withAlert } from 'react-alert';
+import { withAlert } from "react-alert";
 import Logo from "./components/TriviaContainer/Logo/Logo";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { Grid, Row, Col } from "react-flexbox-grid";
@@ -8,7 +8,6 @@ import firebase, { auth, provider } from "./firebase.js";
 import "./App.css";
 import TriviaContainer from "./components/TriviaContainer";
 
-
 class App extends Component {
   constructor() {
     super();
@@ -16,12 +15,12 @@ class App extends Component {
       currentItem: "",
       username: "",
       items: [],
-      user: null // <-- add this line
+      user: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.login = this.login.bind(this); // <-- add this line
-    this.logout = this.logout.bind(this); // <-- add this line
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
   handleChange(e) {
     this.setState({
@@ -99,11 +98,13 @@ class App extends Component {
               <div className="App-header">
                 <Logo />
               </div>
-              {this.state.user ? (
-                <button onClick={this.logout}>Logout</button>
-              ) : (
-                <button onClick={this.login}>Log In</button>
-              )}
+              <div className="Botones">
+                {this.state.user ? (
+                  <button onClick={this.logout}>Logout</button>
+                ) : (
+                  <button onClick={this.login}>Log In</button>
+                )}
+              </div>
             </div>
           </header>
           {this.state.user ? (
@@ -112,20 +113,18 @@ class App extends Component {
                 <div className="user-profile">
                   <img src={this.state.user.photoURL} />
                 </div>
-                <Row>
-                  <Col xs={12}>
-                    <div>
+                <div className="container">
+                  <Row>
+                    <Col xs={12}>
                       <TriviaContainer />
-                    </div>
-                  </Col>
-                </Row>
+                    </Col>
+                  </Row>
+                </div>
               </div>
             </div>
           ) : (
             <div className="wrapper">
-              <p>
-                You must be logged in to see the potluck list and submit to it.
-              </p>
+              <p>You must be logged in to play our awesome game...!!!</p>
             </div>
           )}
         </div>
@@ -161,4 +160,3 @@ class App extends Component {
 }
 
 export default App;
-

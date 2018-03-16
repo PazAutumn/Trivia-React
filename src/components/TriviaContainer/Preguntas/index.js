@@ -33,7 +33,7 @@ class Preguntas extends Component {
         <Grid>
           <Row>
             <Col xs={12}>
-              <p>{questions}</p>
+              <p className="pregunta">{questions}</p>
             </Col>
           </Row>
         </Grid>
@@ -41,9 +41,5 @@ class Preguntas extends Component {
     )
   }
 }
-
-Preguntas.propTypes = {
-
-};
 
 export default Preguntas;
