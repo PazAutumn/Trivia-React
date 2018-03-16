@@ -1,0 +1,30 @@
+{
+  "name": "trivia-react",
+  "homepage": "https://github.com/IsmaryAlvarez/Trivia-React.git",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^4.11.0",
+    "material-ui": "^1.0.0-beta.37",
+    "react": "^16.2.0",
+    "react-alert": "^3.4.0",
+    "react-alert-template-basic": "^1.0.0",
+    "react-dom": "^16.2.0",
+    "react-flexbox-grid": "^2.0.0",
+    "react-prop-types": "^0.4.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.10",
+    "gh-pages": "^1.1.0",
+    "style-loader": "^0.20.3"
+  }
+}

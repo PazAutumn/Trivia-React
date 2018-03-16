@@ -1,0 +1,9 @@
+p{
+    background-color: white;
+    height: 2.5em;
+    outline: 1px dotted black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
