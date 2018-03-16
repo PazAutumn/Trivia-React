@@ -1,5 +1,4 @@
-# Ismary Alvarez
-# Paz Contreras
+# Ismary Alvarez - # Paz Contreras
 
 
 ***
@@ -28,7 +27,7 @@ El proyecto fue realizado con las siguientes dependencias NPM:
   - gh-pages ~v.1.1.0
   - style-loader ~v.0.20.3
 
-
+![alt text]<img src={require("./d6f43bad-ae47-4885-b009-0a0f96d2b34d.jpeg")} className="img-responsive" alt="Logo Trivia" />
 ## Deploy en Heroku:
   - https://triviareact.herokuapp.com/ 
 
