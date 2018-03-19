@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import "./style.css";
+import AnotherQuestion from "./AnotherQuestion";
+
 
 class Preguntas extends Component {
   constructor() {
@@ -18,7 +20,7 @@ class Preguntas extends Component {
     };
   }
 
-  componentWillMount(anotherQuestion) {
+  componentWillMount() {
     fetch("https://opentdb.com/api.php?amount=10&category=11&type=boolean")
       .then(response => {
         console.log(response);
@@ -35,39 +37,10 @@ class Preguntas extends Component {
         console.log("pregunta", questions, "respuesta correcta", respuesta);
         this.setState({ questions });
         this.setState({ respuesta });
-        anotherQuestion();
       });
   }
 
-  anotherQuestion(questions) {
-    fetch("https://opentdb.com/api.php?amount=10&category=11&type=boolean")
-      .then(response => {
-        console.log(response);
-        return response.json();
-      })
-      .then(data => {
-        let random = Math.round(Math.random() * 9);
-        console.log("random", random);
-        let currentQuestion = data.results[random];
-        console.log(currentQuestion);
-        let anotherQuestions = currentQuestion.question;
-        /*console.log('pregunta de questions', questions);*/
-        let respuesta = currentQuestion.correct_answer;
-        console.log(
-          "pregunta another",
-          anotherQuestions,
-          "respuesta correcta",
-          respuesta
-        );
-        this.setState({ anotherQuestions });
-        this.setState({ respuesta });
-        return(
-        <p>{anotherQuestions}</p>
-        )
-      });
-  }
-
-  answerTrue() {
+  answerTrue = () => {
     const { respuesta } = this.state;
     const { score } = this.state;
     console.log("state", this.state.respuesta);
@@ -77,21 +50,29 @@ class Preguntas extends Component {
       console.log("es true");
       alert("Respuesta Correcta");
       this.setState({ score: +1 });
+      const { anotherQuestions } = this.state;
+      return(
+          <div className="pregunta">{anotherQuestions}</div>
+        )
     } else {
       console.log("es false");
       alert("Respuesta Incorrecta");
     }
   }
 
-  answerFalse() {
+  answerFalse = () => {
     const { respuesta } = this.state;
     const { score } = this.state;
+    const { anotherQuestions } = this.state;
     this.setState({ isTrue: false });
     this.setState({ click: true });
     if (respuesta === "False") {
       console.log("es false");
       alert("Respuesta Correcta");
       this.setState({ score: +1 });
+      return(
+        <div className="pregunta">{anotherQuestions}</div>
+      )
     } else {
       console.log("es true");
       alert("Respuesta Incorrecta");
@@ -101,7 +82,7 @@ class Preguntas extends Component {
   render() {
     /*console.log('Render');*/
     const { questions } = this.state;
-    const { anotherQuestions } = this.state;
+    const { currentQuestion } = this.state;
     const { respuesta } = this.state;
     const { click } = this.state;
     const { anotherQuestion } = this.props;
@@ -111,8 +92,7 @@ class Preguntas extends Component {
         <div className="questions-cont">
           <Row>
             <Col xs={12}>
-            <p className="pregunta">{questions}</p>
-            <p className="pregunta">{anotherQuestions}</p>
+            {click === true ? this.AnotherQuestion() : <p className="pregunta">{questions}</p>}
             </Col>
           </Row>
         </div>
